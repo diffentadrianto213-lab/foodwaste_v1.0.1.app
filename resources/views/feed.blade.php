@@ -7,11 +7,11 @@
 
     <div class="flex items-start justify-between">
         <div>
-            <h1 class="text-2xl font-extrabold tracking-tight text-[#6d3df5]">
+            <h1 class="text-2xl font-extrabold tracking-tight text-[#6d3df5] dark:text-purple-400 transition-colors">
                 sharebite
             </h1>
 
-            <p class="mt-2 text-xs font-medium text-slate-500">
+            <p class="mt-2 text-xs font-medium text-slate-500 dark:text-slate-400 transition-colors">
                 Hackney, London · 1 mile radius
             </p>
         </div>
@@ -21,7 +21,7 @@
 
             <button
                 type="submit"
-                class="relative flex h-11 w-11 items-center justify-center rounded-full bg-[#f7f3ff] text-xs font-extrabold text-[#6d3df5]"
+                class="relative flex h-11 w-11 items-center justify-center rounded-full bg-[#f7f3ff] dark:bg-slate-800 text-xs font-extrabold text-[#6d3df5] dark:text-purple-400 transition-colors shadow-sm dark:shadow-none"
                 title="Logout"
             >
                 <span class="absolute right-2 top-2 h-2 w-2 rounded-full bg-red-400"></span>
@@ -30,13 +30,13 @@
     </div>
 
     <form method="GET" action="{{ route('feed') }}">
-        <div class="rounded-2xl bg-slate-100 px-4 py-3">
+        <div class="rounded-2xl bg-slate-100 dark:bg-slate-800 px-4 py-3 transition-colors duration-300">
             <input
                 type="search"
                 name="q"
                 value="{{ request('q') }}"
                 placeholder="Search food and items..."
-                class="w-full bg-transparent text-xs font-semibold text-slate-600 outline-none placeholder:text-slate-400"
+                class="w-full bg-transparent text-xs font-semibold text-slate-600 dark:text-slate-200 outline-none placeholder:text-slate-400 dark:placeholder:text-slate-500 transition-colors"
             >
         </div>
 
@@ -46,41 +46,41 @@
     <div class="flex gap-2 overflow-x-auto pb-1">
         <a
             href="{{ route('feed', ['sort' => $sort]) }}"
-            class="shrink-0 rounded-full bg-[#6d3df5] px-4 py-2 text-xs font-extrabold text-white"
+            class="shrink-0 rounded-full bg-[#6d3df5] dark:bg-purple-600 px-4 py-2 text-xs font-extrabold text-white transition-colors"
         >
             All
         </a>
 
-        <span class="shrink-0 rounded-full bg-white px-4 py-2 text-xs font-bold text-slate-400 shadow-sm">
+        <span class="shrink-0 rounded-full bg-white dark:bg-slate-800 px-4 py-2 text-xs font-bold text-slate-400 dark:text-slate-300 shadow-sm dark:shadow-none transition-colors">
             Food
         </span>
 
-        <span class="shrink-0 rounded-full bg-white px-4 py-2 text-xs font-bold text-slate-400 shadow-sm">
+        <span class="shrink-0 rounded-full bg-white dark:bg-slate-800 px-4 py-2 text-xs font-bold text-slate-400 dark:text-slate-300 shadow-sm dark:shadow-none transition-colors">
             Non-food
         </span>
 
-        <span class="shrink-0 rounded-full bg-white px-4 py-2 text-xs font-bold text-slate-400 shadow-sm">
+        <span class="shrink-0 rounded-full bg-white dark:bg-slate-800 px-4 py-2 text-xs font-bold text-slate-400 dark:text-slate-300 shadow-sm dark:shadow-none transition-colors">
             Deals
         </span>
     </div>
 
     @if($posts->isEmpty())
-        <div class="rounded-[24px] border border-slate-100 bg-white p-6 text-center shadow-sm">
-            <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-[#f4efe4] text-3xl">
+        <div class="rounded-[24px] border border-slate-100 dark:border-slate-700 bg-white dark:bg-slate-800 p-6 text-center shadow-sm dark:shadow-none transition-colors duration-300">
+            <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-[#f4efe4] dark:bg-slate-700 text-3xl transition-colors">
                 🍱
             </div>
 
-            <h2 class="mt-4 text-base font-extrabold text-slate-950">
+            <h2 class="mt-4 text-base font-extrabold text-slate-950 dark:text-white transition-colors">
                 Belum ada makanan
             </h2>
 
-            <p class="mt-2 text-xs leading-5 text-slate-500">
+            <p class="mt-2 text-xs leading-5 text-slate-500 dark:text-slate-400 transition-colors">
                 Belum ada postingan di radius kamu. Coba buat postingan baru.
             </p>
 
             <a
                 href="{{ route('posts.create') }}"
-                class="mt-5 flex w-full items-center justify-center rounded-full bg-[#6d3df5] px-4 py-3 text-xs font-extrabold text-white"
+                class="mt-5 flex w-full items-center justify-center rounded-full bg-[#6d3df5] dark:bg-purple-600 px-4 py-3 text-xs font-extrabold text-white transition-colors hover:bg-purple-700 dark:hover:bg-purple-500"
             >
                 Bagikan Makanan
             </a>
@@ -95,10 +95,10 @@
                 $initial = strtoupper(substr($userName, 0, 1));
             @endphp
 
-            <article class="overflow-hidden rounded-[18px] border border-slate-100 bg-white shadow-sm">
+            <article class="overflow-hidden rounded-[18px] border border-slate-100 dark:border-slate-700 bg-white dark:bg-slate-800 shadow-sm dark:shadow-none transition-colors duration-300">
                 <a href="{{ route('posts.show', $post) }}" class="block">
 
-                    <div class="flex h-[118px] items-center justify-center overflow-hidden bg-[#eee8db]">
+                    <div class="flex h-[118px] items-center justify-center overflow-hidden bg-[#eee8db] dark:bg-slate-700 transition-colors">
                         @if($post->photo_path)
                             <img
                                 src="{{ asset('storage/' . $post->photo_path) }}"
@@ -113,11 +113,11 @@
                     </div>
 
                     <div class="p-3">
-                        <h2 class="line-clamp-2 min-h-[32px] text-xs font-extrabold leading-4 text-slate-950">
+                        <h2 class="line-clamp-2 min-h-[32px] text-xs font-extrabold leading-4 text-slate-950 dark:text-white transition-colors">
                             {{ $post->title }}
                         </h2>
 
-                        <p class="mt-1 text-[10px] font-medium text-slate-400">
+                        <p class="mt-1 text-[10px] font-medium text-slate-400 dark:text-slate-400 transition-colors">
                             @if(isset($post->distance))
                                 {{ round($post->distance, 1) }} mi
                             @else
@@ -127,16 +127,16 @@
 
                         <div class="mt-3 flex items-center justify-between gap-2">
                             <div class="flex min-w-0 items-center gap-2">
-                                <span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-[9px] font-extrabold text-emerald-600">
+                                <span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-emerald-100 dark:bg-emerald-900/40 text-[9px] font-extrabold text-emerald-600 dark:text-emerald-400 transition-colors">
                                     {{ $initial }}
                                 </span>
 
-                                <span class="truncate text-[9px] font-semibold text-slate-500">
+                                <span class="truncate text-[9px] font-semibold text-slate-500 dark:text-slate-400 transition-colors">
                                     {{ $userName }}
                                 </span>
                             </div>
 
-                            <span class="shrink-0 rounded-full bg-emerald-50 px-2 py-1 text-[9px] font-extrabold text-emerald-600">
+                            <span class="shrink-0 rounded-full bg-emerald-50 dark:bg-emerald-900/30 px-2 py-1 text-[9px] font-extrabold text-emerald-600 dark:text-emerald-400 transition-colors border border-transparent dark:border-emerald-800/50">
                                 {{ $post->label === 'Harga Diskon' ? 'Deal' : 'Free' }}
                             </span>
                         </div>

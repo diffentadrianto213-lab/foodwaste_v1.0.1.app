@@ -4,79 +4,79 @@
 
 @section('content')
 <section class="space-y-5">
-    <div class="relative overflow-hidden rounded-[32px] border border-purple-100 bg-white p-6 shadow-2xl shadow-purple-200/60">
-        <div class="absolute -right-16 -top-16 h-44 w-44 rounded-full bg-purple-300/40"></div>
-        <div class="absolute -bottom-20 -left-20 h-48 w-48 rounded-full bg-emerald-200/40"></div>
+    <div class="relative overflow-hidden rounded-[32px] border border-purple-100 dark:border-slate-700 bg-white dark:bg-slate-800 p-6 shadow-2xl shadow-purple-200/60 dark:shadow-none transition-colors duration-300">
+        <div class="absolute -right-16 -top-16 h-44 w-44 rounded-full bg-purple-300/40 dark:bg-purple-900/20"></div>
+        <div class="absolute -bottom-20 -left-20 h-48 w-48 rounded-full bg-emerald-200/40 dark:bg-emerald-900/20"></div>
 
         <div class="relative">
-            <p class="mb-4 inline-flex rounded-full bg-purple-100 px-3 py-2 text-xs font-bold text-purple-800">
+            <p class="mb-4 inline-flex rounded-full bg-purple-100 dark:bg-purple-900/50 px-3 py-2 text-xs font-bold text-purple-800 dark:text-purple-300 transition-colors">
                 Riwayat
             </p>
 
-            <h1 class="text-3xl font-extrabold leading-tight tracking-tight text-slate-950">
+            <h1 class="text-3xl font-extrabold leading-tight tracking-tight text-slate-950 dark:text-white transition-colors">
                 Aktivitas Saya
             </h1>
 
-            <p class="mt-3 text-sm leading-6 text-slate-600">
+            <p class="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300 transition-colors">
                 Lihat riwayat makanan yang pernah kamu bagikan dan permintaan makanan yang pernah kamu kirim.
             </p>
         </div>
     </div>
 
     <div class="grid grid-cols-2 gap-3">
-        <div class="rounded-[24px] border border-purple-100 bg-white p-4 shadow-lg shadow-purple-100/60">
-            <p class="text-xs font-bold uppercase tracking-wide text-slate-400">
+        <div class="rounded-[24px] border border-purple-100 dark:border-slate-700 bg-white dark:bg-slate-800 p-4 shadow-lg shadow-purple-100/60 dark:shadow-none transition-colors duration-300">
+            <p class="text-xs font-bold uppercase tracking-wide text-slate-400 dark:text-slate-500">
                 Dibagikan
             </p>
 
-            <p class="mt-2 text-2xl font-extrabold text-slate-950">
+            <p class="mt-2 text-2xl font-extrabold text-slate-950 dark:text-white transition-colors">
                 {{ $shared->count() }}
             </p>
         </div>
 
-        <div class="rounded-[24px] border border-purple-100 bg-white p-4 shadow-lg shadow-purple-100/60">
-            <p class="text-xs font-bold uppercase tracking-wide text-slate-400">
+        <div class="rounded-[24px] border border-purple-100 dark:border-slate-700 bg-white dark:bg-slate-800 p-4 shadow-lg shadow-purple-100/60 dark:shadow-none transition-colors duration-300">
+            <p class="text-xs font-bold uppercase tracking-wide text-slate-400 dark:text-slate-500">
                 Request
             </p>
 
-            <p class="mt-2 text-2xl font-extrabold text-slate-950">
+            <p class="mt-2 text-2xl font-extrabold text-slate-950 dark:text-white transition-colors">
                 {{ $requests->count() }}
             </p>
         </div>
     </div>
 
     <div class="space-y-4">
-        <div class="rounded-[28px] border border-purple-100 bg-white p-5 shadow-xl shadow-purple-100/70">
-            <p class="text-xs font-bold uppercase tracking-wide text-slate-400">
+        <div class="rounded-[28px] border border-purple-100 dark:border-slate-700 bg-white dark:bg-slate-800 p-5 shadow-xl shadow-purple-100/70 dark:shadow-none transition-colors duration-300">
+            <p class="text-xs font-bold uppercase tracking-wide text-slate-400 dark:text-slate-500">
                 Postinganku
             </p>
 
-            <h2 class="mt-2 text-xl font-extrabold text-slate-950">
+            <h2 class="mt-2 text-xl font-extrabold text-slate-950 dark:text-white transition-colors">
                 Makanan yang Pernah Kubagikan
             </h2>
 
-            <p class="mt-2 text-sm leading-6 text-slate-600">
+            <p class="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-300 transition-colors">
                 Semua makanan yang pernah kamu posting akan muncul di bagian ini.
             </p>
         </div>
 
         @if($shared->isEmpty())
-            <div class="rounded-[28px] border border-purple-100 bg-white p-6 text-center shadow-xl shadow-purple-100/70">
-                <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-purple-100 text-2xl">
+            <div class="rounded-[28px] border border-purple-100 dark:border-slate-700 bg-white dark:bg-slate-800 p-6 text-center shadow-xl shadow-purple-100/70 dark:shadow-none transition-colors duration-300">
+                <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-purple-100 dark:bg-purple-900/50 text-2xl">
                     🍱
                 </div>
 
-                <h3 class="mt-4 text-xl font-extrabold text-slate-950">
+                <h3 class="mt-4 text-xl font-extrabold text-slate-950 dark:text-white transition-colors">
                     Belum ada postingan
                 </h3>
 
-                <p class="mt-2 text-sm leading-6 text-slate-600">
+                <p class="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-300 transition-colors">
                     Kamu belum pernah membagikan makanan. Mulai posting makanan supaya muncul di feed orang sekitar.
                 </p>
 
                 <a
                     href="{{ route('posts.create') }}"
-                    class="mt-5 flex w-full items-center justify-center rounded-full bg-purple-600 px-5 py-3 text-sm font-bold text-white shadow-lg shadow-purple-300/60 transition hover:bg-purple-700"
+                    class="mt-5 flex w-full items-center justify-center rounded-full bg-purple-600 dark:bg-purple-500 px-5 py-3 text-sm font-bold text-white shadow-lg shadow-purple-300/60 dark:shadow-none transition hover:bg-purple-700 dark:hover:bg-purple-600"
                 >
                     Bagikan Makanan
                 </a>
@@ -84,7 +84,7 @@
         @else
             <div class="space-y-4">
                 @foreach($shared as $post)
-                    <article class="overflow-hidden rounded-[28px] border border-purple-100 bg-white shadow-xl shadow-purple-100/70">
+                    <article class="overflow-hidden rounded-[28px] border border-purple-100 dark:border-slate-700 bg-white dark:bg-slate-800 shadow-xl shadow-purple-100/70 dark:shadow-none transition-colors duration-300">
                         <div class="relative">
                             <img
                                 src="{{ $post->photo_path ? asset('storage/' . $post->photo_path) : 'https://via.placeholder.com/420x240?text=Food' }}"
@@ -92,36 +92,36 @@
                                 class="aspect-[16/9] w-full object-cover"
                             >
 
-                            <span class="absolute left-4 top-4 rounded-full bg-white/90 px-3 py-1.5 text-xs font-extrabold text-purple-800 shadow-lg backdrop-blur">
+                            <span class="absolute left-4 top-4 rounded-full bg-white/90 dark:bg-slate-900/90 px-3 py-1.5 text-xs font-extrabold text-purple-800 dark:text-purple-300 shadow-lg backdrop-blur">
                                 {{ ucfirst($post->status) }}
                             </span>
                         </div>
 
                         <div class="p-5">
-                            <h3 class="text-xl font-extrabold leading-tight text-slate-950">
+                            <h3 class="text-xl font-extrabold leading-tight text-slate-950 dark:text-white transition-colors">
                                 {{ $post->title }}
                             </h3>
 
-                            <div class="mt-4 space-y-2 text-sm text-slate-600">
+                            <div class="mt-4 space-y-2 text-sm text-slate-600 dark:text-slate-300 transition-colors">
                                 <p>
-                                    <span class="font-bold text-slate-800">Lokasi:</span>
+                                    <span class="font-bold text-slate-800 dark:text-slate-200">Lokasi:</span>
                                     {{ $post->location_text }}
                                 </p>
 
                                 <p>
-                                    <span class="font-bold text-slate-800">Tersedia sampai:</span>
+                                    <span class="font-bold text-slate-800 dark:text-slate-200">Tersedia sampai:</span>
                                     {{ $post->available_until->format('d M Y H:i') }}
                                 </p>
 
                                 <p>
-                                    <span class="font-bold text-slate-800">Label:</span>
+                                    <span class="font-bold text-slate-800 dark:text-slate-200">Label:</span>
                                     {{ $post->label }}
                                 </p>
                             </div>
 
                             <a
                                 href="{{ route('posts.show', $post) }}"
-                                class="mt-5 flex w-full items-center justify-center rounded-full border border-purple-300 bg-white px-5 py-3 text-sm font-bold text-purple-800 transition hover:bg-purple-50"
+                                class="mt-5 flex w-full items-center justify-center rounded-full border border-purple-300 dark:border-purple-600 bg-white dark:bg-slate-800 px-5 py-3 text-sm font-bold text-purple-800 dark:text-purple-300 transition hover:bg-purple-50 dark:hover:bg-slate-700"
                             >
                                 Lihat Detail
                             </a>
@@ -133,37 +133,37 @@
     </div>
 
     <div class="space-y-4">
-        <div class="rounded-[28px] border border-purple-100 bg-white p-5 shadow-xl shadow-purple-100/70">
-            <p class="text-xs font-bold uppercase tracking-wide text-slate-400">
+        <div class="rounded-[28px] border border-purple-100 dark:border-slate-700 bg-white dark:bg-slate-800 p-5 shadow-xl shadow-purple-100/70 dark:shadow-none transition-colors duration-300">
+            <p class="text-xs font-bold uppercase tracking-wide text-slate-400 dark:text-slate-500">
                 Permintaanku
             </p>
 
-            <h2 class="mt-2 text-xl font-extrabold text-slate-950">
+            <h2 class="mt-2 text-xl font-extrabold text-slate-950 dark:text-white transition-colors">
                 Riwayat Request Saya
             </h2>
 
-            <p class="mt-2 text-sm leading-6 text-slate-600">
+            <p class="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-300 transition-colors">
                 Semua permintaan makanan yang pernah kamu kirim akan muncul di bagian ini.
             </p>
         </div>
 
         @if($requests->isEmpty())
-            <div class="rounded-[28px] border border-purple-100 bg-white p-6 text-center shadow-xl shadow-purple-100/70">
-                <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-purple-100 text-2xl">
+            <div class="rounded-[28px] border border-purple-100 dark:border-slate-700 bg-white dark:bg-slate-800 p-6 text-center shadow-xl shadow-purple-100/70 dark:shadow-none transition-colors duration-300">
+                <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-purple-100 dark:bg-purple-900/50 text-2xl">
                     📨
                 </div>
 
-                <h3 class="mt-4 text-xl font-extrabold text-slate-950">
+                <h3 class="mt-4 text-xl font-extrabold text-slate-950 dark:text-white transition-colors">
                     Belum ada request
                 </h3>
 
-                <p class="mt-2 text-sm leading-6 text-slate-600">
+                <p class="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-300 transition-colors">
                     Kamu belum pernah mengirim permintaan makanan. Cari makanan di feed lalu kirim request.
                 </p>
 
                 <a
                     href="{{ route('feed') }}"
-                    class="mt-5 flex w-full items-center justify-center rounded-full bg-purple-600 px-5 py-3 text-sm font-bold text-white shadow-lg shadow-purple-300/60 transition hover:bg-purple-700"
+                    class="mt-5 flex w-full items-center justify-center rounded-full bg-purple-600 dark:bg-purple-500 px-5 py-3 text-sm font-bold text-white shadow-lg shadow-purple-300/60 dark:shadow-none transition hover:bg-purple-700 dark:hover:bg-purple-600"
                 >
                     Buka Feed
                 </a>
@@ -171,39 +171,39 @@
         @else
             <div class="space-y-4">
                 @foreach($requests as $foodRequest)
-                    <article class="rounded-[28px] border border-purple-100 bg-white p-5 shadow-xl shadow-purple-100/70">
+                    <article class="rounded-[28px] border border-purple-100 dark:border-slate-700 bg-white dark:bg-slate-800 p-5 shadow-xl shadow-purple-100/70 dark:shadow-none transition-colors duration-300">
                         <div class="flex items-start justify-between gap-3">
                             <div>
-                                <p class="inline-flex rounded-full bg-purple-100 px-3 py-1.5 text-xs font-bold text-purple-800">
+                                <p class="inline-flex rounded-full bg-purple-100 dark:bg-purple-900/50 px-3 py-1.5 text-xs font-bold text-purple-800 dark:text-purple-300">
                                     {{ ucfirst($foodRequest->status) }}
                                 </p>
 
-                                <h3 class="mt-3 text-xl font-extrabold leading-tight text-slate-950">
+                                <h3 class="mt-3 text-xl font-extrabold leading-tight text-slate-950 dark:text-white transition-colors">
                                     {{ $foodRequest->post->title }}
                                 </h3>
                             </div>
                         </div>
 
-                        <div class="mt-4 space-y-2 text-sm text-slate-600">
+                        <div class="mt-4 space-y-2 text-sm text-slate-600 dark:text-slate-300 transition-colors">
                             <p>
-                                <span class="font-bold text-slate-800">Pesan:</span>
+                                <span class="font-bold text-slate-800 dark:text-slate-200">Pesan:</span>
                                 {{ $foodRequest->message ?: 'Tidak ada pesan' }}
                             </p>
 
                             <p>
-                                <span class="font-bold text-slate-800">Lokasi:</span>
+                                <span class="font-bold text-slate-800 dark:text-slate-200">Lokasi:</span>
                                 {{ $foodRequest->post->location_text }}
                             </p>
 
                             <p>
-                                <span class="font-bold text-slate-800">Label:</span>
+                                <span class="font-bold text-slate-800 dark:text-slate-200">Label:</span>
                                 {{ $foodRequest->post->label }}
                             </p>
                         </div>
 
                         <a
                             href="{{ route('posts.show', $foodRequest->post) }}"
-                            class="mt-5 flex w-full items-center justify-center rounded-full border border-purple-300 bg-white px-5 py-3 text-sm font-bold text-purple-800 transition hover:bg-purple-50"
+                            class="mt-5 flex w-full items-center justify-center rounded-full border border-purple-300 dark:border-purple-600 bg-white dark:bg-slate-800 px-5 py-3 text-sm font-bold text-purple-800 dark:text-purple-300 transition hover:bg-purple-50 dark:hover:bg-slate-700"
                         >
                             Lihat Postingan
                         </a>
